@@ -11,7 +11,7 @@
 
 @keyframes moveIn {
     0% {
-        transform: scale(0%);
+        transform: scale(0, 0);
         opacity: 0;
     }
     100% {
@@ -64,7 +64,7 @@ html {
 }
 
 .container {
-    background-color: #000000CC;
+    background-color: #000000e6;
     color: aliceblue;
     margin: 8vw;
     padding: 1vw;
@@ -97,7 +97,7 @@ a:hover {
     color: #000000;
 }
 
-.profile, .social {
+.profile, .social, .tool {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -105,6 +105,24 @@ a:hover {
 }
 
 .social {overflow: auto;}
+.tool {flex-direction: column;}
+.tool > a {
+    width: 97%;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.tool > a:hover {
+    color: black;
+}
+.tool > a > h3,
+.tool > a > p {
+    margin: 0;
+}
 
 .profileImage {
     animation: moveIn2 2s;
@@ -145,5 +163,14 @@ a:hover {
 }
 
 .best {
-    background-color: #FFFF0044;
+    background-color: #ff008844;
+}
+
+.yt {
+    width: 50%;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: left;
+    padding-left: 75px;
 }

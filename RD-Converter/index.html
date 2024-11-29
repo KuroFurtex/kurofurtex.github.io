@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythm Dodge - Convert JSON to RDLVL</title>
+</head>
+<body>
+    <h2>Rhythm Dodge - JSON level to RDLVL level</h2>
+    <input type="file" id="jsonFile">
+    <button onclick="downloadRDLVL()">Download</button>
+
+    <script>
+        function downloadRDLVL() {
+            const input = document.getElementById('jsonFile');
+            const file = input.files[0];
+            
+            if (!file) {
+                alert("Please upload a JSON file.");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                let jsonContent = event.target.result;
+
+                // Fix trailing commas in JSON by using a regex to remove them
+                jsonContent = jsonContent.replace(/,\s*([}\]])/g, '$1');
+
+                try {
+                    const levelData = JSON.parse(jsonContent);
+
+                    // Start building the RDLVL content
+                    let rdlvlContent = ">>Metadata\n";
+                    rdlvlContent += `title = ${levelData.title}\n`;
+                    rdlvlContent += `artist = ${levelData.artist}\n`;
+                    rdlvlContent += `author = ${levelData.author}\n`;
+                    rdlvlContent += `songDirectory = ${levelData.songDirectory}\n`;
+                    rdlvlContent += `songBPM = ${levelData.songBPM}\n`;
+                    rdlvlContent += `songOffset = ${levelData.songOffset}\n`;
+                    rdlvlContent += `gap = ${levelData.gap}\n`;
+
+                    // Check for 'win' in obstacles and move it to the metadata section
+                    let winBeat = null;
+                    if (levelData.obstacle) {
+                        levelData.obstacle = levelData.obstacle.filter(obstacle => {
+                            if (obstacle[1] === "win") {
+                                winBeat = obstacle[0]; // Save the win beat
+                                return false; // Remove it from obstacles array
+                            }
+                            return true; // Keep other obstacles
+                        });
+                    }
+
+                    // If 'win' beat was found, add it to metadata
+                    if (winBeat !== null) {
+                        rdlvlContent += `win = ${winBeat}\n`;
+                    }
+
+                    // PreloadSprite section (if exists)
+                    if (levelData.preloadSprite) {
+                        rdlvlContent += ">>preloadSprite\n";
+                        levelData.preloadSprite.forEach(sprite => {
+                            rdlvlContent += `${sprite[0]}, ${sprite[1]}\n`;
+                        });
+                    }
+
+                    // Obstacles section
+                    if (levelData.obstacle) {
+                        rdlvlContent += ">>Obstacles\n";
+                        levelData.obstacle.forEach(obstacle => {
+                            rdlvlContent += obstacle.join(" ") + "\n";
+                        });
+                    }
+
+                    // Trigger download of the RDLVL file
+                    const blob = new Blob([rdlvlContent], { type: 'text/plain' });
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = `${levelData.title}.rdlvl`;
+                    link.click();
+
+                } catch (error) {
+                    alert("Invalid JSON file. Please check the structure.");
+                    console.error("Error parsing JSON:", error);
+                }
+            };
+
+            reader.readAsText(file);
+        }
+    </script>
+</body>
+</html>

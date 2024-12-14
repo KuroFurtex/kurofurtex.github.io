@@ -40,6 +40,23 @@
                     rdlvlContent += `songOffset = ${levelData.songOffset}\n`;
                     rdlvlContent += `gap = ${levelData.gap}\n`;
 
+                    // Check for 'win' in obstacles and move it to the metadata section
+                    let winBeat = null;
+                    if (levelData.obstacle) {
+                        levelData.obstacle = levelData.obstacle.filter(obstacle => {
+                            if (obstacle[1] === "win") {
+                                winBeat = obstacle[0]; // Save the win beat
+                                return false; // Remove it from obstacles array
+                            }
+                            return true; // Keep other obstacles
+                        });
+                    }
+
+                    // If 'win' beat was found, add it to metadata
+                    if (winBeat !== null) {
+                        rdlvlContent += `win = ${winBeat}\n`;
+                    }
+
                     // PreloadSprite section (if exists)
                     if (levelData.preloadSprite) {
                         rdlvlContent += ">>preloadSprite\n";

@@ -105,6 +105,10 @@ a:hover {
 }
 
 .social {overflow: auto;}
+.media > a {
+    display: flex;
+    flex-direction: column;
+}
 .tool {flex-direction: column;}
 .tool > a {
     width: 97%;

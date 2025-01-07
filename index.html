@@ -21,23 +21,10 @@
             <a class="yt" href="https://www.youtube.com/channel/UCS0Fu20S4mOziBZwi3w21Xg" style="background-image: url('https://yt3.googleusercontent.com/kzjgp4vijobUNhAX2WlPtvfunYAG0Absg8bSE-b9vSilqhxHNMsWajdyMWZ6VABqeIKUa98ZyVI=s160-c-k-c0x00ffffff-no-rj');">@DiamondSpaceMusic<br>Music Channel</a>
             <a class="yt" href="https://www.youtube.com/channel/UC1FotBqsqsDI6FosaKf8qRQ" style="background-image: url('https://yt3.googleusercontent.com/_gdzwKszMwoMWsqRyL79wkJeKi1YeA2mBbk-gYBoMiegf5tvz5EVxurERwsz3uz7wnuEuqMsBiI=s160-c-k-c0x00ffffff-no-rj');">@FurtexStudio<br>Gamedev Channel</a>
         </div>
-        <h2 style="text-align: center;">My Other Social Media</h2>
-        <div class="social">    
-            <a href="https://twitter.com/KuroFurtex">X (Twitter)</a>
-            <a href="https://bsky.app/profile/kurofurtex.bsky.social">Bluesky</a>
-            <a href="https://diamondspacegd.itch.io/">Itch.io</a>
-            <a href="https://www.indiedb.com/members/kurofurtex">IndieDB</a>
-            <a href="https://www.instagram.com/kurofurtex/?hl=en">Instagram</a>
-            <a href="https://github.com/DiamondSpaceGD">Github</a>
-            <a href="https://discord.gg/xcn8fPY5e9">Discord</a>
-            <a href="https://www.planetminecraft.com/member/diamondspacegd/">Planet Minecraft</a>
-            <a href="https://kurofurtex.newgrounds.com/">Newgrounds</a>
-            <a href="https://cara.app/kurofurtex">Cara</a>
-        </div>
         <h2 style="text-align: center;">Games i made</h2>
         <div class="social">
             <a href="https://diamondspacegd.itch.io/rhythm-dodge" class="promote best">
-                <img src="image/Logo.png" alt="Rhythm Dodge">
+                <img src="image/newLogo.png" alt="Rhythm Dodge">
                 <h4>Rhythermia</h4>
                 <p>A JSAB-inspired game, with platformer physics & movement. Originally called "Rhythm Dodge"</p>
             </a>
@@ -55,16 +42,57 @@
         <h2 style="text-align: center;">Tools n Stuff</h2>
         <div class="tool">
             <a href="RD-Converter/index.html" class="best">
-                <h3>Rhythm Dodge Converter</h3>
+                <h3>Rhythermia Converter</h3>
                 <p>Convert old JSON level into new RDlvl level</p>
             </a>
             <a href="ArrayGen/index.html">
                 <h3>ArrayGen</h3>
-                <p>An cancelled tool for Rhythm Dodge level making</p>
+                <p>An cancelled tool for Rhythermia level making</p>
             </a>
+            <a href="Anomaly In Art/index.html">
+                <h3>Anomaly In Art</h3>
+                <p>Original version of Anomaly in Art, fetched from my old website</p>
+            </a>
+        </div>
+        <h2 style="text-align: center;">Where can i be found?</h2>
+        <h5 style="text-align: center;">"How many Site you've logged in" Me: Yes</h5>
+        <div class="social media" id="social-media-links">    
+            <a href="https://twitter.com/KuroFurtex">X (Twitter)</a>
+            <a href="https://bsky.app/profile/kurofurtex.bsky.social">Bluesky</a>
+            <a href="https://diamondspacegd.itch.io/">Itch.io</a>
+            <a href="https://www.indiedb.com/members/kurofurtex">IndieDB</a>
+            <a href="https://www.instagram.com/kurofurtex/?hl=en">Instagram</a>
+            <a href="https://github.com/DiamondSpaceGD">Github</a>
+            <a href="https://discord.gg/xcn8fPY5e9">Discord</a>
+            <a href="https://www.planetminecraft.com/member/diamondspacegd/">Planet Minecraft</a>
+            <a href="https://kurofurtex.newgrounds.com/">Newgrounds</a>
+            <a href="https://cara.app/kurofurtex">Cara</a>
+        </div><br>
+        <div class="social media" id="social-media-links">    
+            <a href="https://gamejolt.com/@KuroFurtex">Gamejolt</a>
+            <a href="https://www.tiktok.com/@kurofurtex">Tiktok</a>
+            <a href="https://soundcloud.com/kurofurtex">Soundcloud</a>
+            <a href="https://osu.ppy.sh/users/36413775">osu!</a>
+            <a href="https://elaelo.com/KuroFurtex">Elaelo</a>
+            <a href="https://untonemusic.com/profile/kurofurtex">UNTONE Music</a>
+            <a href="https://character.ai/profile/DiamondSpaceGD">Character.ai</a>
+            <a href="https://scratch.mit.edu/users/KuroFurtex/">Scratch</a>
+            <a href="https://www.reddit.com/user/KuroFurtex/">Reddit</a>
         </div>
         <hr>
         <p style="text-align: center;">Hosted By GitHub, Website made by me :3</p>
     </div>
+    <script>
+        const links = document.querySelectorAll('#social-media-links a');
+        links.forEach(link => {
+            const domain = new URL(link.href).hostname;
+            const icon = document.createElement('img');
+            icon.src = `https://www.google.com/s2/favicons?sz=64&domain=${domain}`;
+            icon.alt = `${domain} Icon`;
+            icon.style.width = '24px'; // Adjust size
+            icon.style.margin = '0 auto';
+            link.prepend(icon);
+        });
+    </script>
 </body>
 </html>

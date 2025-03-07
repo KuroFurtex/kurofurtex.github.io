@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <style>
+      #test {
+        border: solid 1px black;
+        background-color: yellow;
+        padding: 100px;
+        font-size: 100px;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <audio controls id="music" autoplay loop>
+      <source src="music.mp3" type="audio/mpeg">
+    </audio>
+    <h2 id="spam" style="color: red; word-wrap: break-word;"><h2>
+    <button id="test" onclick="run()">Click Saya</button>
+  </body>
+  <script>
+    var listText = [
+      "KENAPA HARUS BEGINI? ",
+      "DULU SEKOLAH TIDAK BEGINI? ",
+      "APA GUNANYA JURNAL INI? ",
+      "JURNAL TIDAK PENTING!! ",
+      "KEMBALIKAN SEPERTI SEBELUMNYA! ",
+    ];
+    var clicked = false;
+    const spam = setInterval(spamMes, 1);
+    document.getElementById("music").removeAttribute("controls");
+    function run() {
+      clicked = true;
+      document.getElementById('music').play();
+      document.getElementById('test').style.display = "none";
+      document.body.style.backgroundColor = "black";
+    }
+
+    function spamMes() {
+      if (clicked) {
+        document.getElementById("spam").innerText += listText[Math.floor(Math.random() * listText.length)];
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' });
+      }
+    }
+
+    document.addEventListener("mouseover", function() {
+      if (clicked) {
+        document.documentElement.requestFullscreen();
+      }
+    });
+  </script>
+</html>

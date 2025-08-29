@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    margin: 2px;
+    margin: 0px;
     font-family: "Century Gothic";
 }
 
@@ -83,7 +83,7 @@ h6 {
 }
 
 #disReport {
-    width: 99vw;
+    width: 100vw;
     height: 10vh;
     font-size: 20px;
 }
@@ -120,7 +120,7 @@ h6 {
 #mainMenu {
     background-color: black;
     position: fixed;
-    width: 99vw;
+    width: 100vw;
     height: 90vh;
     text-align: center;
     padding: 5vh 0 5vh 0;
@@ -156,11 +156,11 @@ input[type="range"]::-webkit-slider-thumb {
     flex-direction: row;
     text-align: left;
     border: solid 1px white;
-    width: 99vw;
+    width: 100vw;
 }
 
 .gameLogo {
-    width: 99vw;
+    width: 100vw;
     height: 40vw;
     object-fit: cover;
     object-position: center;

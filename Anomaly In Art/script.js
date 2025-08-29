@@ -26,7 +26,7 @@ var artwork = {
         "normal",
         "normal"
     ]};
-var aType = ["normal", "color", "duplicate", "displacement", "demetia"]
+var aType = ["normal", "color", "duplicate", "displacement", "demetia"] // Type of anomaly
 var choosen = 0;
 var execute = 0;
 var aCount = 0;

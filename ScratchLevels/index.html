@@ -1,0 +1,238 @@
+<html>
+<head>
+	<title>JSABScratch</title>
+	<link rel="stylesheet" href="core.css">
+	<script type="text/javascript" src="FurtexUtility.js"></script>
+</head>
+
+<script id="level-data" type="application/json">
+{
+	"new era": [
+		{
+			"title": "13",
+			"artist": "Astronaut",
+			"creator": "KuroFurtex",
+			"mode": {
+				"normal": ["./level/Just Shapes and Beats - 13 by Astronaut (FlashYizz Remix).html", 20]
+			},
+			"ft": "KuroFurtex",
+			"lengthSeconds": 123,
+			"thumbnail": "./level/13.png"
+		}
+	],
+	"legacy": [
+		{
+			"title": "Vision",
+			"artist": "Lost Sky",
+			"creator": "KuroFurtex",
+			"mode": {
+				"normal": ["https://scratch.mit.edu/projects/1164019426/fullscreen", 5],
+				"extended": ["https://scratch.mit.edu/projects/1195359742/fullscreen", 9]
+			},
+			"ft": "ZyroZytex",
+			"lengthSeconds": 115
+		},
+		{
+			"title": "Black Snow",
+			"artist": "KgZ",
+			"creator": "KuroFurtex",
+			"mode": {
+				"normal": ["https://scratch.mit.edu/projects/1163392226/fullscreen", 13]
+			},
+			"ft": "ZyroZytex",
+			"lengthSeconds": 80
+		},
+		{
+			"title": "Major Fracture",
+			"artist": "Vandoorea",
+			"creator": "KuroFurtex",
+			"mode": {
+				"normal": ["https://scratch.mit.edu/projects/1142364416/fullscreen", 7.5],
+				"hardcore": ["https://scratch.mit.edu/projects/1144080696/fullscreen", 10]
+			},
+			"ft": "Intelenia",
+			"lengthSeconds": 142
+		},
+		{
+			"title": "You Are My Friend",
+			"artist": "Vandoorea",
+			"creator": "KuroFurtex",
+			"mode": {
+				"normal": ["https://scratch.mit.edu/projects/1125145217/fullscreen", 10]
+			},
+			"ft": "Bacon McBBQ, KuroFurtex, Catonieca",
+			"lengthSeconds": 97
+		},
+		{
+			"title": "Faster Than A Speeding Bullet",
+			"artist": "Metal Fortress",
+			"creator": "KuroFurtex",
+			"mode": {
+				"normal": ["https://scratch.mit.edu/projects/1101295478/fullscreen", 9]
+			},
+			"ft": "Bunlina Bunfur, Catonieca",
+			"lengthSeconds": 98
+		},
+		{
+			"title": "Der Wald",
+			"artist": "Kors K",
+			"creator": "KuroFurtex",
+			"mode": {
+				"normal": ["https://scratch.mit.edu/projects/1090002306/fullscreen", 11]
+			},
+			"ft": "ZyroZytex",
+			"lengthSeconds": 119
+		},
+		{
+			"title": "Bloody Tears",
+			"artist": "NoveDeth",
+			"creator": "KuroFurtex",
+			"mode": {
+				"normal": ["https://scratch.mit.edu/projects/1086367260/fullscreen", 11]
+			},
+			"ft": "ZyroZytex",
+			"lengthSeconds": 115
+		},
+		{
+			"title": "Thumper",
+			"artist": "Waterflame",
+			"creator": "KuroFurtex",
+			"mode": {
+				"normal": ["https://scratch.mit.edu/projects/1073796317/fullscreen", 6]
+			},
+			"ft": "",
+			"lengthSeconds": 146
+		},
+		{
+			"title": "Summer Sun",
+			"artist": "Sammiks",
+			"creator": "KuroFurtex",
+			"mode": {
+				"normal": ["https://scratch.mit.edu/projects/1066715758/fullscreen/", 11],
+				"nightcore": ["https://scratch.mit.edu/projects/1071221090/fullscreen/", 12.5]
+			},
+			"ft": "KuroFurtex",
+			"lengthSeconds": 101
+		}
+	]
+}
+</script>
+
+<body>
+	<img src="logo.png" style="width: auto; height: 15vw; object-fit: contains;">
+	<h3>Place for Fanmade Just Shapes and Beats Levels made in Turbowarp Scratch</h3>
+	<h6>NOTE: We're NOT the real Just Shapes and Beats, go buy the original game made by Berzerk Studio on Steam, credits goes to them</h6>
+	
+	<div id="level-list"></div>
+
+	<dialog id="level-info">
+		<div class="inner">
+			<div class="row">
+				<h1 id="level-title">Artist - Title</h1>
+				<h4 id="level-credit">By Artist - Level By Creator</h4>
+				<p id="level-extra"></p>
+				<div id="level-links"></div>
+				<button id="close">Close</button>
+			</div>
+			<div class="row">
+				<img id="thumbnail">
+			</div>
+		</div>
+	</dialog>
+	
+	<script>
+		function formatSecondsToMMSS(seconds) {
+			const minutes = Math.floor(seconds / 60);
+			const remainingSeconds = seconds % 60;
+			return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+		}
+		
+		const dialog = document.getElementById('level-info');
+		const closeButton = document.getElementById('close');
+		const levelTitle = document.getElementById('level-title');
+		const levelCredit = document.getElementById('level-credit');
+		const levelExtra = document.getElementById('level-extra');
+		const levelLinks = document.getElementById('level-links');
+		const levelListContainer = document.getElementById('level-list');
+
+		closeButton.addEventListener('click', () => FurtexUtil.hideAnimated(dialog));
+		
+		const rawData = document.getElementById("level-data").textContent;
+		const data = JSON.parse(rawData);
+		
+		// loop over categories
+		Object.keys(data).forEach(category => {
+			const header = document.createElement("h3");
+			header.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+			levelListContainer.appendChild(header);
+
+			const categoryContainer = document.createElement("div");
+			categoryContainer.className = "category";
+			levelListContainer.appendChild(categoryContainer);
+
+			// loop over levels
+			data[category].forEach(level => {
+				const btn = document.createElement("button");
+				btn.className = "level";
+				btn.innerHTML = `
+					<h3>${level.title}</h3>
+					<h6>By ${level.artist} - Level By ${level.creator}</h6>
+				`;
+
+				btn.addEventListener("click", () => {
+					levelTitle.textContent = `${level.title}`;
+					levelCredit.textContent = `By ${level.artist} - Level By ${level.creator}`;
+
+					// build extras
+					let extras = [];
+					if (level.ft && level.ft.trim() !== "") {
+						extras.push(`Ft: ${level.ft}`);
+					}
+					if (level.lengthSeconds) {
+						const length = formatSecondsToMMSS(level.lengthSeconds)
+						extras.push(`Length: ${length}`);
+					}
+					levelExtra.textContent = extras.join(" | ");
+
+					// reset links
+					levelLinks.innerHTML = "";
+					if (level.mode) {
+						Object.keys(level.mode).forEach(modeName => {
+							const [url, difficulty] = level.mode[modeName];
+							const link = document.createElement("a");
+							link.href = url;
+							link.target = "_blank";
+							link.textContent = `${modeName} (★${difficulty})`;
+							levelLinks.appendChild(link);
+						});
+					}
+					
+					// set thumbnail
+					const thumbnailEl = document.getElementById("thumbnail");
+					if (level.thumbnail && level.thumbnail.trim() !== "") {
+						thumbnailEl.src = level.thumbnail;
+					} else {
+						// fallback: use last mode
+						const lastMode = Object.keys(level.mode).pop(); // last mode key
+						const [url] = level.mode[lastMode];
+						let projectId = null;
+
+						// check if Scratch URL and extract project ID
+						const match = url.match(/scratch\.mit\.edu\/projects\/(\d+)/);
+						if (match) {
+							projectId = match[1];
+							thumbnailEl.src = `https://uploads.scratch.mit.edu/get_image/project/${projectId}_1152x864.png`;
+						} else {
+							thumbnailEl.removeAttribute("src"); // no image
+						}
+					}
+
+					FurtexUtil.showAnimated(dialog);
+				});
+
+				categoryContainer.appendChild(btn);
+			});
+		});
+	</script>
+</body>
+</html>

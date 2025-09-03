@@ -1,0 +1,136 @@
+html {
+	font-family: "Arial";
+	background-color: #000A10;
+	color: white;
+}
+
+body {
+	text-align: center;
+}
+
+.level {
+	width: 90%;
+	background-color: #005050;
+	border: solid 2px #00FFFF;
+	border-radius: 5px;
+	color: white;
+	margin: 0 0 5px 0;
+	h3, h6 {
+		margin: 5px 0 5px 0;
+		text-align: left;
+	}
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+	transform: scale(0);
+  }
+  to {
+    opacity: 1;
+	transform: 0;
+  }
+}
+
+@keyframes close {
+  from {
+    opacity: 1;
+	transform: scale(1);
+  }
+  to {
+    opacity: 0;
+	transform: scale(4);
+  }
+}
+
+dialog {
+	width: 50vw;
+	padding: 1em;
+	background-color: #005050;
+	border: solid 2px #00FFFF;
+	border-radius: 5px;
+	color: white;
+	box-shadow: 0px 5px 14px 0px var(--shadow);
+	max-width: 400px;
+	z-index: 9999;
+	h3 {
+		margin-top: 0;
+	}
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+	}
+	transition: display 0.5s allow-discrete, overlay 0.5s allow-discrete;
+	animation: close 0.35s forwards;
+	animation-timing-function: cubic-bezier(0.935, 0.040, 0.925, 0.095);;
+	&[open] {
+		animation: open 0.2s forwards;
+		animation-timing-function: cubic-bezier(0.045, 0.765, 0.090, 0.975);;
+	}
+}
+
+dialog::backdrop {
+	background-color: #00000099;
+	transition: display 0.2s ease;
+}
+
+#level-info {
+	margin-left: 10vw;
+	margin-right: 10vw;
+	height: 75vh;
+	max-width: 80vw;
+	width: 80vw;
+	.inner {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		.row {
+			flex: 1;
+			min-width: 0;
+		}
+	}
+	#thumbnail {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+	#level-title, #level-credit, #level-extra, #level-links {
+		text-align: left;
+		margin: 5px 0 5px 0;
+	}
+	#level-links {
+		display: flex;
+		flex-direction: column;
+		a {
+			width: auto;
+			color: white;
+			text-decoration: none;
+			background-color: #00606099;
+			border: solid 2px #00FFFF;
+			border-radius: 5px;
+			padding: 0.5em;
+			margin-bottom: 10px;
+			margin-right: 10px;
+			font-weight: bolder;
+		}
+	}
+	#close {
+		margin-right: 10px;
+		color: white;
+		text-decoration: none;
+		background-color: #00606099;
+		border: solid 2px #00FFFF;
+		border-radius: 5px;
+		padding: 0.5em;
+		font-weight: bolder;
+		cursor: pointer;
+		margin-top: auto;
+		position: absolute;
+		bottom: 0;  /* a little padding from bottom */
+		left: 0;   /* anchor to left */
+		width: 49%;  /* don’t stretch full width */
+	}
+}

@@ -9,6 +9,18 @@
 {
 	"new era": [
 		{
+			"title": "Ember",
+			"artist": "Ampyx",
+			"creator": "ShapebroJSAB",
+			"description": "When i see the original version of this, one that MacabreJSAB made, i'm thinking that this could be improved. So i did. Here is my improved, widescreen, FurtexEngine version of that level",
+			"mode": {
+				"normal": ["./level/Just Shapes and Beats - Ember By Ampyx.html", 9]
+			},
+			"ft": "BacterioGirl",
+			"lengthSeconds": 86,
+			"thumbnail": "./level/ember.png"
+		},
+		{
 			"title": "13",
 			"artist": "Astronaut",
 			"creator": "KuroFurtex",
@@ -153,6 +165,8 @@
 				<h1 id="level-title">Artist - Title</h1>
 				<h4 id="level-credit">By Artist - Level By Creator</h4>
 				<p id="level-extra"></p>
+				<p id="level-description" style="font-size: 0.75em; color: white;"></p>
+				<hr style="height: 2px; background-color: cyan; border: none;">
 				<div id="level-links"></div>
 				<button id="close">Close</button>
 			</div>
@@ -174,6 +188,7 @@
 		const levelTitle = document.getElementById('level-title');
 		const levelCredit = document.getElementById('level-credit');
 		const levelExtra = document.getElementById('level-extra');
+		const levelDescription = document.getElementById('level-description');
 		const levelLinks = document.getElementById('level-links');
 		const levelListContainer = document.getElementById('level-list');
 
@@ -215,7 +230,7 @@
 						extras.push(`Length: ${length}`);
 					}
 					levelExtra.textContent = extras.join(" | ");
-
+					
 					// reset links
 					levelLinks.innerHTML = "";
 					if (level.mode) {
@@ -227,6 +242,11 @@
 							link.textContent = `${modeName} (★${difficulty})`;
 							levelLinks.appendChild(link);
 						});
+					}
+					
+					levelDescription.innerHTML = "";
+					if (level.description) {
+						levelDescription.textContent = level.description;
 					}
 					
 					// set thumbnail

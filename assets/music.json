@@ -1,0 +1,214 @@
+{
+	"tracks": {
+		"Midway Through": {
+			"artwork": "assets/img/cover-birthday.png",
+			"artist": "KuroFurtex",
+			"release": "2025-12-06",
+			"desc": "A special birthday track for my 18th birthday",
+			"customHTML": "assets/special/birthday.html",
+			"youtubeLink": "https://youtu.be/ejOXtXA1-Ac?si=3lzsNbk9YVH4ecw5",
+			"untoneLink": "https://untonemusic.com/release/midway-through"
+		},
+		"Dayzone Light 2025": {
+			"artwork": "assets/img/cover-dayzone.png",
+			"artist": "KuroFurtex",
+			"release": "2025-06-30",
+			"desc": "A remake of my music \"Dayzone Light\" released from 2024. Made for Rhythermia.",
+			"youtubeLink": "https://www.youtube.com/watch?v=ukPgzHLcW60"
+		},
+		"Incoming Death": {
+			"artwork": "assets/img/cover-death.png",
+			"artist": "KuroFurtex",
+			"release": "2025-05-11",
+			"desc": "Track for Unfluff",
+			"youtubeLink": "https://youtu.be/RABPD-s0q4o?si=8W5oiwSA4uf1ggbd"
+		},
+		"Transfur Simulation": {
+			"artwork": "assets/img/cover-transfur.png",
+			"artist": "KuroFurtex",
+			"release": "2025-04-25",
+			"desc": "A random track, purely for my comeback",
+			"youtubeLink": "https://youtu.be/sBWGmdEkUvc?si=zqJ-Cgoad8gDORiD"
+		},
+		"Infinite Hopes": {
+			"artwork": "assets/img/10-IH OC.png",
+			"artist": "KuroFurtex",
+			"release": "2025-03-07",
+			"album": "Kuromatria",
+			"desc": "Music about hopes that are eternity",
+			"youtubeLink": "https://youtu.be/vE-Dton5S2g?si=ocU-eX5F4Eo-3H1_",
+			"untoneLink": "https://untonemusic.com/release/kuromatria"
+		},
+		"Moots": {
+			"artwork": "assets/img/09-M OCs.png",
+			"artist": "KuroFurtex",
+			"release": "2024-11-09",
+			"album": "Kuromatria",
+			"desc": "Music about Moots, my besties, and the best time i spent with them :3",
+			"youtubeLink": "https://youtu.be/_EfCz6LMUaU?si=gwq6fqkqhe3MXp9M",
+			"untoneLink": "https://untonemusic.com/release/kuromatria"
+		},
+		"Playful Stars": {
+			"artwork": "assets/img/08-PS OC.png",
+			"artist": "KuroFurtex",
+			"release": "2024-10-26",
+			"album": "Kuromatria",
+			"desc": "Music about Stars, watching them playing together with each other",
+			"youtubeLink": "https://youtu.be/yUJuQQiFmlk?si=Ua73pMMFtPcMlA93",
+			"untoneLink": "https://untonemusic.com/release/kuromatria"
+		},
+		"Corruption": {
+			"artwork": "assets/img/07-C OC.png",
+			"artist": "KuroFurtex",
+			"release": "2024-10-20",
+			"album": "Kuromatria",
+			"desc": "Music about Corruption from Just Shapes and Beats",
+			"youtubeLink": "https://youtu.be/bZ5oZNNzBXc?si=fLdijCC4Mb6HVhlm",
+			"untoneLink": "https://untonemusic.com/release/kuromatria"
+		},
+		"School Dance-off": {
+			"artwork": "assets/img/06-SDo OC.png",
+			"artist": "KuroFurtex",
+			"release": "2024-10-05",
+			"album": "Kuromatria",
+			"desc": "Music about, well dancing off at School",
+			"youtubeLink": "https://youtu.be/_2-72oUOMug?si=3YkGc_pHe9eGfRgJ",
+			"untoneLink": "https://untonemusic.com/release/kuromatria"
+		},
+		"Level by Level": {
+			"artwork": "assets/img/05-LbL OC.png",
+			"artist": "KuroFurtex",
+			"release": "2024-09-28",
+			"album": "Kuromatria",
+			"desc": "Music about video games and arcades",
+			"youtubeLink": "https://youtu.be/JY2Bds7q8Wk?si=V2F-v4uktHUXen6V",
+			"untoneLink": "https://untonemusic.com/release/kuromatria"
+		},
+		"Mandela": {
+			"artwork": "assets/img/04-M OC.png",
+			"artist": "KuroFurtex",
+			"release": "2024-09-22",
+			"album": "Kuromatria",
+			"desc": "Music about.... Remembering",
+			"youtubeLink": "https://youtu.be/KjYZ0guyIDI?si=oslTwqMZSpnLrZD_",
+			"untoneLink": "https://untonemusic.com/release/kuromatria"
+		},
+		"Mutate it": {
+			"artwork": "assets/img/03-Mi OC.png",
+			"artist": "KuroFurtex",
+			"release": "2024-09-14",
+			"album": "Kuromatria",
+			"desc": "Music about mutation.... that's the easiest way to describe this track really",
+			"youtubeLink": "https://youtu.be/Bcg_7XyObcc?si=IXsXdQJnR4Hw1Ax1",
+			"untoneLink": "https://untonemusic.com/release/kuromatria"
+		},
+		"Sweety Pawcutie": {
+			"artwork": "assets/img/02-SP OC.png",
+			"artist": "KuroFurtex",
+			"release": "2024-09-07",
+			"album": "Kuromatria",
+			"desc": "Music about falling in love with weird furry girl with paw as her face. Dont even ask how i came up with this",
+			"youtubeLink": "https://youtu.be/oIkVam450uo?si=red2cAQgf66M9cXk",
+			"untoneLink": "https://untonemusic.com/release/kuromatria"
+		},
+		"All the Way Back": {
+			"artwork": "assets/img/01-AtWB OC.png",
+			"artist": "KuroFurtex",
+			"release": "2024-09-01",
+			"album": "Kuromatria",
+			"desc": "Music about the old internet, the past, and how memorable it is to look back",
+			"youtubeLink": "https://youtu.be/hdVSR59ZhjU?si=WT5r7i_JA2vXpuHA",
+			"untoneLink": "https://untonemusic.com/release/kuromatria"
+		},
+		"Epic Hack Kid": {
+			"artwork": "assets/img/cover-hack.png",
+			"artist": "KuroFurtex",
+			"release": "2024-05-24",
+			"desc": "Unused Rhythermia Track, feel free to use",
+			"youtubeLink": "https://youtu.be/fHVljsyemv8?si=HiF3QdY6o1wOJIZ2"
+		},
+		"DiamondSpaceGD": {
+			"artwork": "assets/img/cover-500-subs.png",
+			"artist": "KuroFurtex",
+			"release": "2024-05-04",
+			"desc": "A Special Megamix made to celebrate 500 Subscribers on Youtube",
+			"youtubeLink": "https://youtu.be/BN3idIRFqgM?si=pn4lD10ABkkpG6Qc"
+		},
+		"Dayzone Light": {
+			"artwork": "assets/img/cover-dayzone-old.png",
+			"artist": "KuroFurtex",
+			"release": "2024-04-08",
+			"desc": "\"Latex experiencing sunrise for the first time\" 10 year later after Puro and Colin leave the laboratory in Changed Universe, all Latex was set free and feel the sunshine for the first time and they rebuild society based on what's human just left behind. they learn, adapt, and eventually getting smarter and better, to the point where earth is now back at it's previous state of crowded, living planet. Yes this description is stolen from the video and also this song has become my anthem",
+			"youtubeLink": "https://youtu.be/xw5QkMhPR6U?si=LS2NTmEnc1wYc7da"
+		},
+		"Rhythermia": {
+			"artwork": "assets/img/cover-rhythermia.png",
+			"artist": "KuroFurtex",
+			"release": "2024-02-25",
+			"desc": "Main Menu soundtrack for my game \"Rhythermia\"",
+			"youtubeLink": "https://youtu.be/sdWb6nHW8gE?si=8mfYDMPTffTZ0GX_"
+		},
+		"Animate": {
+			"artwork": "assets/img/cover-animate.png",
+			"artist": "KuroFurtex",
+			"release": "2024-02-25",
+			"desc": "Perhaps second most iconic soundtrack i ever made, the style is pretty much different from most of my song",
+			"youtubeLink": "https://youtu.be/z1Eh8XlHclE?si=bqZGmOy1ZvPpPykN"
+		},
+		"We Messed Up": {
+			"artwork": "assets/img/cover-2024.png",
+			"artist": "KuroFurtex",
+			"release": "2023-12-31",
+			"desc": "Not really proud of this one, since it's mostly cringe stuff, but yeah",
+			"youtubeLink": "https://youtu.be/jk2uFaaIDVE?si=sgJGUDMtj9r1WmKt"
+		},
+		"Everyone is Depressed (Except Me)": {
+			"artwork": "assets/img/cover-depressed.png",
+			"artist": "KuroFurtex",
+			"release": "2023-12-28",
+			"desc": "This was released when I'm in hard depression and stuff, so yea a bit edgy but, y'know",
+			"youtubeLink": "https://youtu.be/YBbMJ97ZFyk?si=lUlBPmnQxKm0my3A"
+		},
+		"Be Transfurred And Dance": {
+			"artwork": "assets/img/cover-transfurred.png",
+			"artist": "KuroFurtex",
+			"release": "2023-11-25",
+			"desc": "Attempt at making a club-styled music, I'd say it doesn't sound good",
+			"youtubeLink": "https://youtu.be/8C5zB4Cu1BE?si=rwJ5VXhmzARfI_o9"
+		},
+		"Kuro Furtex": {
+			"artwork": "assets/img/cover-300-subs.png",
+			"artist": "KuroFurtex",
+			"release": "2023-10-22",
+			"desc": "300 Subscribers celebration. This one is more Indonesia-themed with Angklung and stuff.",
+			"youtubeLink": "https://youtu.be/vbLx2YT6__Y?si=_TKpfNHuXMPHBYIe"
+		},
+		"The World and Universe": {
+			"artwork": "assets/img/cover-world-universe.png",
+			"artist": "KuroFurtex",
+			"release": "2023-09-10",
+			"desc": "This is basically a cancelled music but I can see the potential of it becoming a GD demon level... Not really",
+			"youtubeLink": "https://youtu.be/pGsSXeo0pUE?si=s0Mz2eSnNeOzpxqO"
+		}
+	},
+	"albums": {
+		"Kuromatria": {
+			"artist": "KuroFurtex",
+			"artwork": "assets/img/cover-kuromatria.png",
+			"release": "2025-03-07",
+			"customHTML": "assets/special/kuromatria.html",
+			"tracks": [
+				"All the Way Back",
+				"Sweety Pawcutie",
+				"Mutate it",
+				"Mandela",
+				"Level by Level",
+				"School Dance-off",
+				"Corruption",
+				"Playful Stars",
+				"Moots",
+				"Infinite Hopes"
+			]
+		}
+	}
+}

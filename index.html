@@ -1,102 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DiamondSpaceGD</title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>KuroFurtex - Game Developer & Music Producer</title>
+	<meta name="description" content="Portfolio of KuroFurtex (DiamondSpaceGD): Game Developer, Music Producer, Digital Artist, and Content Creator. Explore projects, music releases, and more.">
+	<meta name="keywords" content="game developer, music producer, digital artist, content creator, portfolio, KuroFurtex, DiamondSpaceGD">
+	<meta name="author" content="KuroFurtex">
+	
+	<!-- Open Graph / Social Media -->
+	<meta property="og:title" content="KuroFurtex - Game Developer & Music Producer">
+	<meta property="og:description" content="Portfolio of KuroFurtex: Game Developer, Music Producer, Digital Artist">
+	<meta property="og:image" content="https://kurofurtex.github.io/assets/img/portrait.png">
+	<meta property="og:url" content="https://kurofurtex.github.io">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="KuroFurtex Portfolio">
+	
+	<link rel="stylesheet" href="style.css">
+	<script src="plugins/showdown.min.js"></script>
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@type": "Person",
+	  "name": "KuroFurtex",
+	  "alternateName": "DiamondSpaceGD",
+	  "url": "https://kurofurtex.github.io",
+	  "description": "Game Developer, Music Producer, and Digital Artist",
+	  "jobTitle": ["Game Developer", "Music Producer"],
+	  "worksFor": {
+		"@type": "Organization",
+		"name": "Furtex Studio"
+	  },
+	  "sameAs": [
+		"https://www.youtube.com/@KuroFurtexMusic",
+		"https://soundcloud.com/kurofurtex",
+		"https://kurofurtex.itch.io/",
+		"https://bsky.app/profile/kurofurtex.bsky.social"
+	  ],
+	  "knowsAbout": ["Game Development", "Music Production", "Digital Art", "Content Creation"],
+	  "image": "https://kurofurtex.github.io/assets/img/portrait.png"
+	}
+	</script>
 </head>
 <body>
-    <img src="image/potrait.png" class="profileImage">
-    <div class="container">
-        <div class="profile">
-            <div style="width: 90%;">
-                <h1 class="name">DiamondSpaceGD</h1>
-                <p>Hello, Im DiamondSpaceGD AKA KuroFurtex, call me DSGD or Kuro, im a round-headed furry on the internet who makes game and music (also art but im not into those)</p>
-            </div>
-        </div>
-        <h2 style="text-align: center;">My Youtube</h2>
-        <div class="social" style="height: 5vw;">    
-            <a class="yt" href="https://www.youtube.com/channel/UC_QeZCGnJhNnG-SSINhmeDg" style="background-image: url('https://yt3.googleusercontent.com/Lwi_6SLah6Q3FAH0CkTFblgnsV71OQEDVro0ZWfbP88xg02aztKSnuZKga9MArLl4WWsPCV7xA=s160-c-k-c0x00ffffff-no-rj');">@diamondspacegd<br>Main Channel</a>
-            <a class="yt" href="https://www.youtube.com/channel/UCS0Fu20S4mOziBZwi3w21Xg" style="background-image: url('https://yt3.googleusercontent.com/kzjgp4vijobUNhAX2WlPtvfunYAG0Absg8bSE-b9vSilqhxHNMsWajdyMWZ6VABqeIKUa98ZyVI=s160-c-k-c0x00ffffff-no-rj');">@DiamondSpaceMusic<br>Music Channel</a>
-            <a class="yt" href="https://www.youtube.com/channel/UC1FotBqsqsDI6FosaKf8qRQ" style="background-image: url('https://yt3.googleusercontent.com/_gdzwKszMwoMWsqRyL79wkJeKi1YeA2mBbk-gYBoMiegf5tvz5EVxurERwsz3uz7wnuEuqMsBiI=s160-c-k-c0x00ffffff-no-rj');">@FurtexStudio<br>Gamedev Channel</a>
-        </div>
-        <h2 style="text-align: center;">Games i made</h2>
-        <div class="social">
-            <a href="https://diamondspacegd.itch.io/rhythm-dodge" class="promote best">
-                <img src="image/newLogo.png" alt="Rhythm Dodge">
-                <h4>Rhythermia</h4>
-                <p>A JSAB-inspired game, with platformer physics & movement. Originally called "Rhythm Dodge"</p>
-            </a>
-            <a href="https://diamondspacegd.itch.io/kuro-aetherblade-triads" class="promote">
-                <img src="image/Logo2.png" alt="Rhythm Dodge">
-                <h4>Kuro: Aetherblade Triads</h4>
-                <p>A Discountinued Platformer game about having a blade spinning around, the origin of Neolight blade</p>
-            </a>
-            <a href="https://drive.google.com/file/d/1H0LtZA2ePbYG5RkjJxamhPZA6HMpylTv/view?usp=sharing" class="promote">
-                <img src="image/Capture.png" alt="Rhythm Dodge">
-                <h4>The Dodgehell</h4>
-                <p>A small project about dodging bullet, this is where the idea of Rhythm Dodge came!</p>
-            </a>
-        </div>
-        <h2 style="text-align: center;">Tools n Stuff</h2>
-        <div class="tool">
-			<a href="ScratchLevels/index.html" class="best">
-                <h3>JSABScratch</h3>
-                <p>Place for Fanmade Just Shapes and Beats Levels made in Turbowarp Scratch</p>
-            </a>
-            <a href="RD-Converter/index.html" class="best">
-                <h3>Rhythermia Converter</h3>
-                <p>Convert old JSON level into new RDlvl level</p>
-            </a>
-            <a href="ArrayGen/index.html">
-                <h3>ArrayGen</h3>
-                <p>An cancelled tool for Rhythermia level making</p>
-            </a>
-            <a href="Anomaly In Art/index.html">
-                <h3>Anomaly In Art</h3>
-                <p>Original version of Anomaly in Art, fetched from my old website</p>
-            </a>
-        </div>
-        <h2 style="text-align: center;">Where can i be found?</h2>
-        <h5 style="text-align: center;">"How many Site you've logged in" Me: Yes</h5>
-        <div class="social media" id="social-media-links">    
-            <a href="https://twitter.com/KuroFurtex">X (Twitter)</a>
-            <a href="https://bsky.app/profile/kurofurtex.bsky.social">Bluesky</a>
-            <a href="https://diamondspacegd.itch.io/">Itch.io</a>
-            <a href="https://www.indiedb.com/members/kurofurtex">IndieDB</a>
-            <a href="https://www.instagram.com/kurofurtex/?hl=en">Instagram</a>
-            <a href="https://github.com/DiamondSpaceGD">Github</a>
-            <a href="https://discord.gg/xcn8fPY5e9">Discord</a>
-            <a href="https://www.planetminecraft.com/member/diamondspacegd/">Planet Minecraft</a>
-            <a href="https://kurofurtex.newgrounds.com/">Newgrounds</a>
-            <a href="https://cara.app/kurofurtex">Cara</a>
-        </div><br>
-        <div class="social media" id="social-media-links">    
-            <a href="https://gamejolt.com/@KuroFurtex">Gamejolt</a>
-            <a href="https://www.tiktok.com/@kurofurtex">Tiktok</a>
-            <a href="https://soundcloud.com/kurofurtex">Soundcloud</a>
-            <a href="https://osu.ppy.sh/users/36413775">osu!</a>
-            <a href="https://elaelo.com/KuroFurtex">Elaelo</a>
-            <a href="https://untonemusic.com/profile/kurofurtex">UNTONE Music</a>
-            <a href="https://character.ai/profile/DiamondSpaceGD">Character.ai</a>
-            <a href="https://scratch.mit.edu/users/KuroFurtex/">Scratch</a>
-            <a href="https://www.reddit.com/user/KuroFurtex/">Reddit</a>
-        </div>
-        <hr>
-        <p style="text-align: center;">Hosted By GitHub, Website made by me :3</p>
-    </div>
-    <script>
-        const links = document.querySelectorAll('#social-media-links a');
-        links.forEach(link => {
-            const domain = new URL(link.href).hostname;
-            const icon = document.createElement('img');
-            icon.src = `https://www.google.com/s2/favicons?sz=64&domain=${domain}`;
-            icon.alt = `${domain} Icon`;
-            icon.style.width = '24px'; // Adjust size
-            icon.style.margin = '0 auto';
-            link.prepend(icon);
-        });
-    </script>
+	<div class="angled-bg"></div>
+
+	<!-- Navigation - Sticky at top -->
+	<nav class="navbar" id="main-navbar" aria-label="Main navigation">
+		<a href="#home">Home</a>
+		<a href="#projects">Projects</a>
+		<a href="#music">Music Releases</a>
+		<a href="#others">Others</a>
+	</nav>
+	
+	<!-- Main content container -->
+	<main class="main-container">
+		<!-- Profile section -->
+		<section class="main-profile" id="home">
+			<div class="row">
+				<div class="centered">
+					<img src="assets/img/portrait.png" alt="Portrait of KuroFurtex" class="portrait">
+				</div>
+				<div class="center-v">
+					<h1 class="title-name">KuroFurtex</h1>
+					<p>Call me Kuro<br>
+					I'm a Game Developer, Music Producer, Digital Artist, Content Creator, and uhhh more. I guess
+					</p>
+				</div>
+			</div>
+		</section>
+		
+		<!-- Home content -->
+		<section class="content-section">
+			<h2>About Me</h2>
+			<div class="markdown-content">
+				<!-- Markdown will be loaded here -->
+				<div class="fluff-md" data-src="assets/md/home.md"></div>
+			</div>
+		</section>
+		
+		<!-- Projects section -->
+		<section class="content-section" id="projects">
+			<h2>Projects</h2>
+			<div class="list">
+				<!-- Projects will be loaded here via JavaScript -->
+			</div>
+			
+			<!-- Fallback for search engines/non-JS -->
+			<noscript>
+				<div class="project-fallback">
+					<p>Projects are loaded dynamically. Please enable JavaScript to view them, or check out my <a href="https://github.com/KuroFurtex">GitHub</a>.</p>
+				</div>
+			</noscript>
+		</section>
+		
+		<!-- Music Releases section -->
+		<section class="content-section" id="music">
+			<h2>Music Releases</h2>
+			<!-- Add your music content here -->
+			<div class="music-grid">
+			
+			</div>
+		</section>
+		
+		<!-- Others section -->
+		<section class="content-section" id="others">
+			<h2>Others</h2>
+			<!-- Add other content here -->
+			<p>Additional content coming soon!</p>
+		</section>
+	</main>
+	
+	<dialog id="music-info">
+		<!-- Needing an X button on top right acting as a close button -->
+	</dialog>
+
+	<!-- Project template (hidden) -->
+	<template id="project-template">
+		<a class="project-btn" href="#">
+			<div>
+				<img class="logo" alt="Project logo">
+			</div>
+			<div class="center-v">
+				<h3 class="project-title"></h3>
+				<p class="project-description"></p>
+				<div class="tags">
+				</div>
+			</div>
+		</a>
+	</template>
+
+	<script>
+	// Configuration
+	const tagColor = {
+		"Main Project": ["#0ff", "#000"],
+		"In Development": ["#0a0", "#fff"],
+		"Finished": ["#0f0", "#000"],
+		"Side Project": ["#ff0", "#000"],
+		"Game": ["#a0a", "#fff"],
+		"Discontinued": ["#a00", "#fff"]
+	};
+
+	// Make navbar sticky and change style on scroll
+	window.addEventListener('scroll', function() {
+		const navbar = document.getElementById('main-navbar');
+		const mainProfile = document.querySelector('.main-profile');
+		const profileRect = mainProfile.getBoundingClientRect();
+		
+		// When main-profile is out of view, make navbar solid
+		if (profileRect.bottom <= 0) {
+			navbar.classList.add('navbar-scrolled');
+		} else {
+			navbar.classList.remove('navbar-scrolled');
+		}
+	});
+
+	// Smooth scrolling for navigation links
+	document.addEventListener('DOMContentLoaded', function() {
+		const navbarLinks = document.querySelectorAll('.navbar a');
+		
+		navbarLinks.forEach(link => {
+			link.addEventListener('click', function(e) {
+				const targetId = this.getAttribute('href');
+				if (targetId.startsWith('#')) {
+					e.preventDefault();
+					const targetElement = document.querySelector(targetId);
+					if (targetElement) {
+						// Calculate position accounting for navbar height
+						const navbarHeight = document.querySelector('.navbar').offsetHeight;
+						const targetPosition = targetElement.offsetTop - navbarHeight - 20;
+						
+						window.scrollTo({
+							top: targetPosition,
+							behavior: 'smooth'
+						});
+						
+						// Update active link
+						navbarLinks.forEach(l => l.classList.remove('selected'));
+						this.classList.add('selected');
+					}
+				}
+			});
+		});
+		
+		// Highlight current section on scroll
+		window.addEventListener('scroll', function() {
+			const sections = document.querySelectorAll('.content-section, .main-profile');
+			const navbarHeight = document.querySelector('.navbar').offsetHeight;
+			let currentSection = '';
+			
+			sections.forEach(section => {
+				const sectionTop = section.offsetTop - navbarHeight - 100;
+				const sectionBottom = sectionTop + section.offsetHeight;
+				
+				if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+					currentSection = section.id;
+				}
+			});
+			
+			// Update navbar selection
+			navbarLinks.forEach(link => {
+				link.classList.remove('selected');
+				if (link.getAttribute('href') === '#' + currentSection) {
+					link.classList.add('selected');
+				}
+			});
+		});
+	});
+
+	// Load markdown content
+	document.addEventListener("DOMContentLoaded", async () => {
+		const converter = new showdown.Converter();
+		
+		// Load markdown content
+		const mdElems = document.querySelectorAll(".fluff-md");
+		for (const elem of mdElems) {
+			const src = elem.getAttribute("data-src");
+			if (!src) continue;
+			
+			try {
+				const txt = await fetch(src).then(r => r.text());
+				const html = converter.makeHtml(txt);
+				elem.innerHTML = html;
+			} catch (err) {
+				elem.innerHTML = "<p>Failed to load content</p>";
+				console.error(err);
+			}
+		}
+		
+		// Load projects
+		const tpl = document.querySelector("#project-template");
+		const list = document.querySelector(".list");
+		
+		try {
+			const proj = await fetch("assets/projects.json").then(r => r.json());
+			
+			proj.forEach(item => {
+				const clone = tpl.content.cloneNode(true);
+				const btn = clone.querySelector(".project-btn");
+				
+				btn.href = item.link || "#";
+				btn.style.setProperty("--project-bg", `url("${item.bg}")`);
+				btn.querySelector(".logo").src = item.thumbnail;
+				btn.querySelector(".logo").alt = `${item.title} logo`;
+				btn.querySelector(".project-title").textContent = item.title;
+				btn.querySelector(".project-description").innerHTML = item.desc + "<br><small>Current version: " + item.ver + "</small>";
+				
+				const tagWrap = btn.querySelector(".tags");
+				item.tags.forEach(t => {
+					const tag = document.createElement("span");
+					tag.className = "tag";
+					tag.textContent = t;
+					if (tagColor.hasOwnProperty(t)) {
+						tag.style.backgroundColor = tagColor[t][0];
+						tag.style.color = tagColor[t][1];
+					}
+					tagWrap.appendChild(tag);
+				});
+				
+				list.appendChild(clone);
+			});
+		} catch (err) {
+			console.error("Failed to load projects.json", err);
+			list.innerHTML = '<p>Unable to load projects. Please check back later.</p>';
+		}
+
+		const musicGrid = document.querySelector(".music-grid");
+		const dialog = document.getElementById("music-info");
+
+		function getYouTubeEmbedUrl(u) {
+			if (!u) return "";
+			try {
+				const url = new URL(u);
+				if (url.hostname.includes("youtu.be")) {
+					const id = url.pathname.replace("/", "");
+					return `https://www.youtube.com/embed/${id}`;
+				}
+				if (url.hostname.includes("youtube.com")) {
+					const id = url.searchParams.get("v");
+					if (id) return `https://www.youtube.com/embed/${id}`;
+				}
+				return "";
+			} catch (_) {
+				return "";
+			}
+		}
+
+		function openMusicDialog(name, data) {
+			if (data.customHTML) {
+				dialog.innerHTML = `
+					<button class="music-dialog-close" aria-label="Close">×</button>
+					<div class="music-custom"></div>
+				`;
+				const closeBtn = dialog.querySelector('.music-dialog-close');
+				if (closeBtn) closeBtn.addEventListener('click', function() { dialog.close(); });
+				dialog.addEventListener('click', function(e) { if (e.target === dialog) dialog.close(); });
+				dialog.showModal();
+				fetch(data.customHTML).then(r => r.text()).then(html => {
+					const c = dialog.querySelector('.music-custom');
+					if (c) {
+						c.innerHTML = html;
+						const scripts = Array.from(c.querySelectorAll('script'));
+						scripts.forEach(oldScript => {
+							const s = document.createElement('script');
+							if (oldScript.src) {
+								s.src = oldScript.src;
+							} else {
+								s.textContent = `(function(){` + oldScript.textContent + `\n})();`;
+							}
+							oldScript.replaceWith(s);
+						});
+
+						c.dataset.name = name;
+						c.dataset.artist = data.artist || '';
+						c.dataset.release = data.release || '';
+						c.dataset.desc = data.desc || '';
+						c.dataset.youtubeLink = data.youtubeLink || '';
+						c.dataset.untoneLink = data.untoneLink || '';
+
+						const allTracks = (window.MUSIC_DB && window.MUSIC_DB.tracks) ? window.MUSIC_DB.tracks : {};
+						const tracksList = Array.isArray(data.tracks) ? data.tracks : [];
+						window.MUSIC_CONTEXT = { name, ...data, allTracks, tracksList };
+						c.dispatchEvent(new CustomEvent('music-init', { detail: { name, ...data, allTracks, tracksList } }));
+					}
+				}).catch(() => {
+					const c = dialog.querySelector('.music-custom');
+					if (c) c.textContent = 'Failed to load custom view.';
+				});
+				return;
+			}
+
+			const embed = getYouTubeEmbedUrl(data.youtubeLink || "");
+			const actions = [
+				data.youtubeLink ? `<a class="music-link" href="${data.youtubeLink}" target="_blank" rel="noopener noreferrer">YouTube</a>` : "",
+				data.untoneLink ? `<a class="music-link" href="${data.untoneLink}" target="_blank" rel="noopener noreferrer">Untone</a>` : ""
+			].join("");
+			dialog.innerHTML = `
+				<button class="music-dialog-close" aria-label="Close">×</button>
+				<div class="music-dialog-content">
+					<div class="music-dialog-cover"><img src="${data.artwork}" alt="${name} cover"></div>
+					<div class="music-dialog-details">
+						<h1>${name}</h1>
+						<p><strong>Artist:</strong> ${data.artist || ""}</p>
+						<p><strong>Release:</strong> ${data.release || ""}</p>
+						<p>${data.desc || ""}</p>
+						${embed ? `<iframe width="100%" height="360" src="${embed}" title="${name}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` : ""}
+						<div class="music-dialog-actions">${actions}</div>
+					</div>
+				</div>
+			`;
+			const closeBtn = dialog.querySelector('.music-dialog-close');
+			if (closeBtn) closeBtn.addEventListener('click', function() { dialog.close(); });
+			dialog.addEventListener('click', function(e) { if (e.target === dialog) dialog.close(); });
+			dialog.showModal();
+		}
+
+		try {
+			const music = await fetch("assets/music.json").then(r => r.json());
+			window.MUSIC_DB = music;
+            const entries = Object.entries(music.tracks || {});
+            entries.forEach(([name, data]) => {
+                if (data.album) { return; }
+                const card = document.createElement("button");
+                card.className = "music-card";
+                card.type = "button";
+                const art = document.createElement("div");
+                art.className = "music-art";
+                if (data.artwork) art.style.setProperty("--artwork", `url("${data.artwork}")`);
+                card.appendChild(art);
+                const title = document.createElement("div");
+                title.className = "music-card-title";
+                title.textContent = name;
+                card.appendChild(title);
+                card.dataset.release = data.release || '1970-01-01';
+                card.dataset.kind = 'track';
+                card.addEventListener("click", function() { openMusicDialog(name, data); });
+                musicGrid.appendChild(card);
+            });
+
+            const albums = Object.entries(music.albums || {});
+            albums.forEach(([name, data]) => {
+                const card = document.createElement("button");
+                card.className = "music-card";
+                card.type = "button";
+                const art = document.createElement("div");
+                art.className = "music-art";
+                const albumArt = data.artwork || (name === 'Kuromatria' ? 'assets/img/Kuromatria-bg.png' : '');
+                if (albumArt) art.style.setProperty("--artwork", `url("${albumArt}")`);
+                card.appendChild(art);
+                const title = document.createElement("div");
+                title.className = "music-card-title";
+                title.textContent = name;
+                card.appendChild(title);
+                card.dataset.release = data.release || '1970-01-01';
+                card.dataset.kind = 'album';
+                card.addEventListener("click", function() { openMusicDialog(name, data); });
+                musicGrid.appendChild(card);
+            });
+
+            const cards = Array.from(musicGrid.children);
+            cards.sort((a, b) => {
+                const ra = Date.parse(a.dataset.release) || 0;
+                const rb = Date.parse(b.dataset.release) || 0;
+                return rb - ra;
+            });
+            cards.forEach(c => musicGrid.appendChild(c));
+		} catch (err) {
+			musicGrid.innerHTML = '<p>Unable to load music releases.</p>';
+		}
+	});
+	</script>
 </body>
 </html>

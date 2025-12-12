@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Rhythermia",
+        "desc": "A dodging-platformer-rhythm game",
+		"ver": "v0.8 - Corruption Update",
+        "thumbnail": "assets/img/rhythermia.png",
+        "tags": ["Main Project", "Game", "In Development", "Rhythm", "Downloadable"],
+        "bg": "assets/img/rhythermia-bg.png",
+        "link": "https://kurofurtex.itch.io/rhythermia"
+    },
+	{
+        "title": "KuroFurtex's Platformer",
+        "desc": "A rage Platformer game with trolls and such, totally not inspired by I Wanna Be The Guy",
+		"ver": "v0.1",
+        "thumbnail": "assets/img/kuro-plat.png",
+        "tags": ["Side Project", "Game", "In Development", "Platformer", "Playable On Web", "Scratch"],
+        "bg": "assets/img/kuro-plat-bg.png",
+        "link": "https://scratch.mit.edu/projects/1249997840/"
+    },
+	{
+        "title": "Kuromatria Defense",
+        "desc": "Just a simple Tower Defense game, where enemy can shoot back",
+		"ver": "v0.1",
+        "thumbnail": "assets/img/kuro-defense.png",
+        "tags": ["Side Project", "Game", "In Development", "Tower Defense", "Playable On Web", "Downloadable"],
+        "bg": "assets/img/kuro-defense-bg.png",
+        "link": "https://kurofurtex.itch.io/kuromatria-defense"
+    },
+	{
+        "title": "Flipped One Eighty",
+        "desc": "Reversi with extra step",
+		"ver": "v0.1",
+        "thumbnail": "assets/img/flipped.png",
+        "tags": ["Side Project", "Game", "In Development", "Board", "Playable On Web", "Downloadable"],
+        "bg": "assets/img/flipped-bg.png",
+        "link": "https://kurofurtex.itch.io/flipped-one-eighty"
+    },
+	{
+        "title": "Kuro: Aetherblade Triads",
+        "desc": "Platformer game where Kuro, Zyro and Yuro is going around the world",
+		"ver": "v0.0.1",
+        "thumbnail": "assets/img/aetherblade.png",
+        "tags": ["Main Project", "Game", "Discontinued", "Platformer", "Downloadable"],
+        "bg": "assets/img/aetherblade-bg.png",
+        "link": "https://kurofurtex.itch.io/kuro-aetherblade-triads"
+    },
+	{
+        "title": "Anomaly In Art",
+        "desc": "A horror game where you protect arts (not really scary)",
+		"ver": "v0.1",
+        "thumbnail": "assets/img/anomaly.png",
+        "tags": ["Main Project", "Game", "Discontinued", "Horror", "Playable On Web"],
+        "bg": "assets/img/anomaly-bg.png",
+        "link": "https://kurofurtex.itch.io/anomaly-in-art"
+    },
+	{
+        "title": "Elevennis",
+        "desc": "Tennis but unfair",
+		"ver": "v1",
+        "thumbnail": "assets/img/tennis.png",
+        "tags": ["Side Project", "Game", "Finished", "Sport", "Playable On Web", "Fancade"],
+        "bg": "assets/img/tennis-bg.png",
+        "link": "https://kurofurtex.itch.io/elevennis"
+    },
+	{
+        "title": "Ds4: The Simple Math",
+        "desc": "Are the maths really that simple??",
+		"ver": "v1",
+        "thumbnail": "assets/img/ds4.png",
+        "tags": ["Side Project", "Game", "Finished", "Puzzle", "Playable On Web", "Fancade"],
+        "bg": "assets/img/ds4-bg.png",
+        "link": "https://kurofurtex.itch.io/the-simple-math"
+    }
+]

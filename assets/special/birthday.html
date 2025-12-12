@@ -1,0 +1,121 @@
+<style>
+.music-dialog-details {
+    background-color: #000;
+    color: #fff;
+	animation: birthday-intro2 3s linear;
+}
+
+.music-dialog-cover {
+	animation:
+		birthday-intro 3s linear,
+		birthday-loop 2s ease-in-out 3s infinite;
+}
+
+@keyframes birthday-intro {
+    0% { filter: brightness(0%) contrast(200%) }
+	10% { filter: brightness(0%) contrast(200%) }
+	12% { filter: brightness(100%) contrast(180%) }
+	15% { filter: brightness(75%) contrast(190%) }
+	50% { filter: brightness(75%) contrast(190%) }
+    100% { filter: brightness(100%) contrast(100%) }
+}
+
+@keyframes birthday-intro2 {
+    0% { filter: brightness(0%) contrast(200%) }
+	50% { filter: brightness(0%) contrast(200%) }
+    100% { filter: brightness(100%) contrast(100%) }
+}
+
+@keyframes birthday-loop {
+	0% { filter: brightness(100%) contrast(100%) }
+	50% { filter: brightness(90%) contrast(120%) }
+    100% { filter: brightness(100%) contrast(100%) }
+}
+</style>
+<div class="music-dialog-content">
+    <div class="music-dialog-cover"><img id="cover" alt=""></div>
+    <div class="music-dialog-details">
+        <h1 id="name"></h1>
+        <p id="artist"></p>
+        <p id="release"></p>
+        <p id="description"></p>
+        <div id="embed"></div>
+        <div class="music-dialog-actions" id="actions"></div>
+    </div>
+</div>
+<script>
+function yt(u){
+    if(!u) return "";
+    try{
+        const url=new URL(u);
+        if(url.hostname.includes("youtu.be")){
+            const id=url.pathname.replace("/","");
+            return `https://www.youtube.com/embed/${id}`;
+        }
+        if(url.hostname.includes("youtube.com")){
+            const id=url.searchParams.get("v");
+            if(id) return `https://www.youtube.com/embed/${id}`;
+        }
+        return "";
+    }catch(_){
+        return "";
+    }
+}
+const container=document.querySelector('.music-custom');
+if(container){
+    container.addEventListener('music-init',e=>{
+        const d=e.detail||{};
+        const name=d.name||"";
+        const artist=d.artist||"";
+        const release=d.release||"";
+        const desc=d.desc||"";
+        const artwork=d.artwork||"";
+        const youtube=d.youtubeLink||"";
+        const untone=d.untoneLink||"";
+
+        const cover=document.getElementById('cover');
+        const elName=document.getElementById('name');
+        const elArtist=document.getElementById('artist');
+        const elRelease=document.getElementById('release');
+        const elDesc=document.getElementById('description');
+        const elEmbed=document.getElementById('embed');
+        const elActions=document.getElementById('actions');
+
+        if(cover){ cover.src=artwork; cover.alt=name+" cover"; }
+        if(elName){ elName.textContent=name; }
+        if(elArtist){ elArtist.innerHTML=`<strong>Artist:</strong> ${artist}`; }
+        if(elRelease){ elRelease.innerHTML=`<strong>Release:</strong> ${release}`; }
+        if(elDesc){ elDesc.textContent=desc; }
+
+        const embedUrl=yt(youtube);
+        if(embedUrl){
+            const iframe=document.createElement('iframe');
+            iframe.width='100%';
+            iframe.height='360';
+            iframe.src=embedUrl;
+            iframe.title=name;
+            iframe.frameBorder='0';
+            iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen=true;
+            elEmbed.innerHTML='';
+            elEmbed.appendChild(iframe);
+        }
+
+        elActions.innerHTML='';
+        if(youtube){
+            const a=document.createElement('a');
+            a.className='music-link';
+            a.href=youtube; a.target='_blank'; a.rel='noopener noreferrer';
+            a.textContent='YouTube';
+            elActions.appendChild(a);
+        }
+        if(untone){
+            const a=document.createElement('a');
+            a.className='music-link';
+            a.href=untone; a.target='_blank'; a.rel='noopener noreferrer';
+            a.textContent='Untone';
+            elActions.appendChild(a);
+        }
+    }, { once: true });
+}
+</script>

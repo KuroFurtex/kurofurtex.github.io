@@ -1,0 +1,201 @@
+<style>
+.music-dialog-cover {
+    position: relative;
+	overflow: hidden;
+}
+
+.music-dialog-cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+	background-color: var(--bg-color);
+    background-image: url(assets/img/Kuromatria-bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0; /* This should be BELOW the image */
+    pointer-events: none;
+	transition: background-color 0.25s
+}
+
+/* Fix: Ensure the cover image has a higher z-index */
+.music-dialog-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative; /* Required for z-index to work */
+    z-index: 1; /* Higher than the background */
+	animation: float-loop 3s ease-in-out infinite;
+}
+
+/* Buttons appear OVER the image */
+.music-dialog-cover .music-link {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+	height: 50%;
+    z-index: 10; /* keeps them above the image */
+}
+
+/* Left + right positioning */
+.music-dialog-cover #prev {
+    left: 0;
+}
+.music-dialog-cover #next {
+    right: 0;
+}
+
+@keyframes float-loop {
+	0% { transform: translateY(10px) }
+	50% { transform: translateY(-10px) }
+    100% { transform: translateY(10px) }
+}
+
+</style>
+<div class="music-dialog-content">
+    <div class="music-dialog-cover" style="--bg-color: #00f" id="bg-color">
+        <img id="cover" alt="">
+        <button id="prev" class="music-link" type="button">←</button>
+        <button id="next" class="music-link" type="button">→</button>
+    </div>
+    <div class="music-dialog-details">
+        <h1 id="name"></h1>
+        <p id="artist"></p>
+        <p id="release"></p>
+        <p id="description"></p>
+        <div id="embed"></div>
+        <div class="music-dialog-actions" id="actions"></div>
+    </div>
+    
+</div>
+<script>
+
+const colors = {
+	"All the Way Back": "#D2FFC1",
+	"Sweety Pawcutie": "#F6DCFF",
+	"Mutate it": "#CCE3DA",
+	"Mandela": "#E9E9E9",
+	"Level by Level": "#94E8F3",
+	"School Dance-off": "#B1D7FF",
+	"Corruption": "#C24A8F",
+	"Playful Stars": "#1E2877",
+	"Moots": "#D8DCEA",
+	"Infinite Hopes": "#120C39"
+}
+
+function yt(u){
+    if(!u) return "";
+    try{
+        const url=new URL(u);
+        if(url.hostname.includes("youtu.be")){
+            const id=url.pathname.replace("/","");
+            return `https://www.youtube.com/embed/${id}`;
+        }
+        if(url.hostname.includes("youtube.com")){
+            const id=url.searchParams.get("v");
+            if(id) return `https://www.youtube.com/embed/${id}`;
+        }
+        return "";
+    }catch(_){
+        return "";
+    }
+}
+const container=document.querySelector('.music-custom');
+if(container){
+    container.addEventListener('music-init',e=>{
+        const d=e.detail||{};
+        const albumName=d.name||"";
+        const albumArtist=d.artist||"";
+        const albumRelease=d.release||"";
+        const albumDesc=d.desc||"";
+        const albumArtwork=d.artwork||"";
+        const albumYouTube=d.youtubeLink||"";
+        const albumUntone=d.untoneLink||"";
+        const tracks=Array.isArray(d.tracksList)? d.tracksList: [];
+        const allTracks=d.allTracks||{};
+
+        const cover=document.getElementById('cover');
+        const bgColor=document.getElementById('bg-color');
+        const elName=document.getElementById('name');
+        const elArtist=document.getElementById('artist');
+        const elRelease=document.getElementById('release');
+        const elDesc=document.getElementById('description');
+        const elEmbed=document.getElementById('embed');
+        const elActions=document.getElementById('actions');
+        const elChars=document.getElementById('characters');
+        const prev=document.getElementById('prev');
+        const next=document.getElementById('next');
+
+        function slug(s){
+            return String(s).toLowerCase().replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-');
+        }
+        function abbrFrom(name){
+            const m=name.match(/[A-Z]/g);
+            return (m&&m.length? m.join(''): name.charAt(0)).toUpperCase();
+        }
+        const albumAbbr=abbrFrom(albumName);
+
+        let idx=0;
+        function render(){
+            const tName=tracks[idx]||albumName;
+            const tData=allTracks[tName]||{};
+            const useArtist=tData.artist||albumArtist;
+            const useRelease=tData.release||albumRelease;
+            const useDesc=tData.desc||albumDesc;
+            const useArtwork=tData.artwork||albumArtwork||'';
+            const useYouTube=tData.youtubeLink||albumYouTube||'';
+            const useUntone=tData.untoneLink||albumUntone||'';
+
+            if(cover){ cover.src=useArtwork; cover.alt=tName+" cover"; }
+            if(elName){ elName.textContent=tName; }
+            if(elArtist){ elArtist.innerHTML=`<strong>Artist:</strong> ${useArtist}`; }
+            if(elRelease){ elRelease.innerHTML=`<strong>Release:</strong> ${useRelease}`; }
+            if(elDesc){ elDesc.textContent=useDesc; }
+			console.log(tName + " - " + colors[tName]);
+			if(tName in colors){ bgColor.style.setProperty("--bg-color", colors[tName]); }
+
+            const embedUrl=yt(useYouTube);
+            elEmbed.innerHTML='';
+            if(embedUrl){
+                const iframe=document.createElement('iframe');
+                iframe.width='100%';
+                iframe.height='360';
+                iframe.src=embedUrl;
+                iframe.title=tName;
+                iframe.frameBorder='0';
+                iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                iframe.allowFullscreen=true;
+                elEmbed.appendChild(iframe);
+            }
+
+            elActions.innerHTML='';
+            if(useYouTube){
+                const a=document.createElement('a');
+                a.className='music-link';
+                a.href=useYouTube; a.target='_blank'; a.rel='noopener noreferrer';
+                a.textContent='YouTube';
+                elActions.appendChild(a);
+            }
+            if(useUntone){
+                const a=document.createElement('a');
+                a.className='music-link';
+                a.href=useUntone; a.target='_blank'; a.rel='noopener noreferrer';
+                a.textContent='Untone';
+                elActions.appendChild(a);
+            }
+
+            if(prev){ prev.disabled = idx <= 0; }
+            if(next){ next.disabled = idx >= tracks.length-1; }
+        }
+
+        render();
+        if(prev) prev.addEventListener('click',function(){ if(idx>0){ idx--; render(); } });
+        if(next) next.addEventListener('click',function(){ if(idx<tracks.length-1){ idx++; render(); } });
+    }, { once: true });
+}
+</script>

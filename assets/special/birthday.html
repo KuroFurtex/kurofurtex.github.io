@@ -36,8 +36,10 @@
     <div class="music-dialog-cover"><img id="cover" alt=""></div>
     <div class="music-dialog-details">
         <h1 id="name"></h1>
-        <p id="artist"></p>
-        <p id="release"></p>
+        <div class="tags">
+			<span class="tag" id="artist"></span>
+			<span class="tag" id="release"></span>
+		</div>
         <p id="description"></p>
         <div id="embed"></div>
         <div class="music-dialog-actions" id="actions"></div>
@@ -83,15 +85,14 @@ if(container){
 
         if(cover){ cover.src=artwork; cover.alt=name+" cover"; }
         if(elName){ elName.textContent=name; }
-        if(elArtist){ elArtist.innerHTML=`<strong>Artist:</strong> ${artist}`; }
-        if(elRelease){ elRelease.innerHTML=`<strong>Release:</strong> ${release}`; }
+        if(elArtist){ elArtist.innerHTML=`${artist}`; }
+        if(elRelease){ elRelease.innerHTML=`Released on ${release}`; }
         if(elDesc){ elDesc.textContent=desc; }
 
         const embedUrl=yt(youtube);
         if(embedUrl){
             const iframe=document.createElement('iframe');
-            iframe.width='100%';
-            iframe.height='360';
+            iframe.className="music-iframe";
             iframe.src=embedUrl;
             iframe.title=name;
             iframe.frameBorder='0';

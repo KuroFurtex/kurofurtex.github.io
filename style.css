@@ -338,6 +338,31 @@ small {
 }
 
 
+.content-item {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #0dd;
+    color: black;
+    text-decoration: none;
+    min-height: 100px;
+    border-radius: 10px;
+    background: #ffffff55;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-item > h2 {
+    border: none;
+}
+
+.content-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 /* ================================
    RESPONSIVE DESIGN
    ================================ */
@@ -462,12 +487,14 @@ small {
 .music-dialog-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     max-height: 90vh;
     overflow: auto;
 }
 
 .music-dialog-cover {
     background: #000;
+	height: 100%;
 	aspect-ratio: 1 / 1;
 }
 
@@ -481,11 +508,11 @@ small {
 .music-dialog-details {
     padding: 16px;
     display: grid;
-    gap: 10px;
+    gap: 5px;
     align-content: start;
 }
 
-.music-dialog-details p{
+.music-dialog-details p, h1{
     margin: 0;
 }
 
@@ -522,6 +549,11 @@ small {
     font-size: 1.5rem;
     line-height: 1;
     cursor: pointer;
+}
+
+.music-iframe {
+	aspect-ratio: 16 / 9;
+	width: 100%;
 }
 
 @media only screen and (orientation: portrait) {

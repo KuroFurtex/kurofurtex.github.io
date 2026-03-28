@@ -108,7 +108,12 @@
 		<section class="content-section" id="others">
 			<h2>Others</h2>
 			<!-- Add other content here -->
-			<p>Additional content coming soon!</p>
+
+			<a class="content-item" href="fanjsabs/index.html">
+				<h3>JSAB Scratch</h3>
+				<p>Place for Fanmade Just Shapes and Beats Levels made in Turbowarp Scratch, mostly the levels are made by me</p>
+			</a>
+
 		</section>
 	</main>
 	
@@ -342,10 +347,12 @@
 					<div class="music-dialog-cover"><img src="${data.artwork}" alt="${name} cover"></div>
 					<div class="music-dialog-details">
 						<h1>${name}</h1>
-						<p><strong>Artist:</strong> ${data.artist || ""}</p>
-						<p><strong>Release:</strong> ${data.release || ""}</p>
+						<div class="tags">
+							<span class="tag">${data.artist || ""}</span>
+							<span class="tag">Released on ${data.release || ""}</span>
+						</div>
 						<p>${data.desc || ""}</p>
-						${embed ? `<iframe width="100%" height="360" src="${embed}" title="${name}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` : ""}
+						${embed ? `<iframe class="music-iframe" src="${embed}" title="${name}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` : ""}
 						<div class="music-dialog-actions">${actions}</div>
 					</div>
 				</div>
